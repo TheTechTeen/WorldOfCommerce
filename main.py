@@ -8,7 +8,11 @@ class MyClient(discord.Client):
         print('Logged on as {0}!'.format(self.user))
 
     async def on_message(self, message):
+        if message.author == client.user:
+            return
         print('Message from {0.author}: {0.content}'.format(message))
+        if message.content.strip() == "!ping":
+            await message.channel.send('Pong!')
 
 # Init Logging
 logger = logging.getLogger('discord')
