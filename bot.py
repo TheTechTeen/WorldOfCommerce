@@ -8,6 +8,12 @@ bot = commands.Bot(command_prefix="!")
 async def pingpong(ctx):
     await ctx.send("PONG!")
 
+
+@bot.command(name="prefix")
+async def prefix(ctx, new_prefix):
+    bot.command_prefix = new_prefix
+    print("Set prefix to " + new_prefix)
+
 @bot.event
 async def on_ready():
     for guild in bot.guilds:
