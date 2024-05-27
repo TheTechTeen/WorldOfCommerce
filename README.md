@@ -1,0 +1,1 @@
+A bot for Discord, perpetually to remain in an uncompleted state.
